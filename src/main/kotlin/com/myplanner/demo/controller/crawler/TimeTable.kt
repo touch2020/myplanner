@@ -7,8 +7,8 @@ import org.jsoup.select.Elements
 
 class TimeTable {
     fun getTimetable(): Document{
-        val id = "0511pjw"
-        val pw = "pjw50946626"
+        val id = "123"
+        val pw = "123"
         val userAgent = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Mobile Safari/537.36"
 
         val response : Connection.Response = Jsoup.connect("https://everytime.kr/user/login")
