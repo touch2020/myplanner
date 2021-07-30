@@ -3,9 +3,7 @@ package com.myplanner.demo.controller
 import com.myplanner.demo.controller.crawler.TimeTable
 import com.myplanner.demo.service.SubjectService
 import org.jsoup.select.Elements
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/subject")
@@ -13,10 +11,10 @@ class SubjectController (
         private val subjectService: SubjectService
         ){
 
-        @GetMapping
-        fun getTimeTable() : String{
+        @PostMapping("/insert")
+        fun getTimeTable(@RequestBody loginRequest: LoginRequest) : String{
                 subjectService.deleteSubject()
-                val table = TimeTable().getTimetable()
+                val table = TimeTable().getTimetable(loginRequest.userId, loginRequest.userPw)
                 val subject : Elements = table.select("subject")
 
                 for(element in subject) {
@@ -37,6 +35,9 @@ class SubjectController (
 
                 return "/todo"
         }
+
+        @GetMapping("/get")
+        fun getSubjects() = subjectService.getSubjects()
 
 
 }
