@@ -5,6 +5,8 @@ DB: Docker 위의 Mysql image
 
 사용언어(kotlin) 
 
+frontend 부분 : https://github.com/touch2020/myplanner-frontend (사용언어:react)
+
 spring boot로 planner backend 구현,
 jsoup라이브러리를 이용한 에브리타임 시간표 크롤링이후 DB에 필요한 데이터 저장,  
 react 이용해서 사용자가 DB에 추가한 오늘 계획을 보여주고 
@@ -32,6 +34,8 @@ react 이용해서 사용자가 DB에 추가한 오늘 계획을 보여주고
 로그인 정보를 사용자에게 입력받아서 백엔드에 전달
 
 ![로그인 추가](https://user-images.githubusercontent.com/64405110/127597011-83eb6106-1899-4d1d-8e99-8ee6795c80a2.PNG)
+
+
 
 
 
